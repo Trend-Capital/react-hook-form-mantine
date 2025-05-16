@@ -24,7 +24,8 @@
     "jsxFragmentFactory": ""
   },
   "include": [
-    "src"
+    "src",
+    "scripts"
   ],
   "exclude": [
     "src/**/*.spec.tsx",
