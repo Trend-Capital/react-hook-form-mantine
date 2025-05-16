@@ -1,5 +1,5 @@
 {
-  "name": "react-hook-form-mantine",
+  "name": "@franzen-dev/react-hook-form-mantine",
   "version": "4.0.0",
   "description": "React hook form wrapper for Mantine components",
   "keywords": [
@@ -28,15 +28,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle --globals react/jsx-runtime=React,@mantine/core=MantineCore,@mantine/dates=MantineDates,react=React,react-dom=ReactDOM,react-hook-form=ReactHookForm",
     "build-storybook": "storybook build",
     "compile": "tsc --noEmit",
     "generate-barrels": "barrelsby --delete -c .barrelsby",
     "lint": "eslint src/**/*.tsx --fix",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
-    "semantic-release": "semantic-release",
-    "watch": "microbundle --watch"
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
@@ -74,5 +73,15 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43"
   },
-  "isLibrary": true
+  "isLibrary": true,
+  "microbundle": {
+    "globals": {
+      "react/jsx-runtime": "React",
+      "@mantine/core": "MantineCore",
+      "@mantine/dates": "MantineDates",
+      "react": "React",
+      "react-dom": "ReactDOM",
+      "react-hook-form": "ReactHookForm"
+    }
+  }
 }
