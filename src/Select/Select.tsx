@@ -34,9 +34,9 @@ export function Select<T extends FieldValues>({
   return (
     <$Select
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val, option) => {
+        fieldOnChange(val);
+        onChange?.(val, option);
       }}
       error={fieldState.error?.message}
       {...field}

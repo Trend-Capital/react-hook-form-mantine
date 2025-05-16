@@ -8,8 +8,9 @@ import {
   type FileInputProps as $FileInputProps,
 } from "@mantine/core";
 
+// Create a type that properly handles the multiple prop
 export type FileInputProps<T extends FieldValues> = UseControllerProps<T> &
-  Omit<$FileInputProps, "value" | "defaultValue">;
+  Omit<$FileInputProps<boolean>, "value" | "defaultValue">;
 
 export function FileInput<T extends FieldValues>({
   name,
@@ -17,13 +18,9 @@ export function FileInput<T extends FieldValues>({
   defaultValue,
   rules,
   shouldUnregister,
-  multiple,
   ...props
 }: FileInputProps<T>) {
-  const {
-    field: { value, ...field },
-    fieldState,
-  } = useController<T>({
+  const { field, fieldState } = useController<T>({
     name,
     control,
     defaultValue,
@@ -31,11 +28,17 @@ export function FileInput<T extends FieldValues>({
     shouldUnregister,
   });
 
+  // Extract value and original onChange to avoid them being passed twice
+  const { value, onChange, ...restField } = field;
+
   return (
     <$FileInput
       value={value}
       error={fieldState.error?.message}
-      {...field}
+      onChange={(files) => {
+        onChange(files);
+      }}
+      {...restField}
       {...props}
     />
   );
