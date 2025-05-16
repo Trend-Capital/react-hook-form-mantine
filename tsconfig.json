@@ -2,7 +2,11 @@
   "compilerOptions": {
     "declaration": true,
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -17,6 +21,11 @@
     "jsxFactory": "",
     "jsxFragmentFactory": ""
   },
-  "include": ["src"],
-  "exclude": ["src/**/*.spec.tsx", "src/setupTests.tsx", "dist", "example"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/**/*.spec.tsx",
+    "dist"
+  ]
 }

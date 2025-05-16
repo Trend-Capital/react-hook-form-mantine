@@ -14,7 +14,6 @@ module.exports = {
     "standard-with-typescript",
     "plugin:react/jsx-runtime",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended",
   ],
   overrides: [],
   parserOptions: {
