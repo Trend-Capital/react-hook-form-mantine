@@ -16,22 +16,163 @@
   "author": "Bryce Franzen",
   "type": "module",
   "exports": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/index.esm.mjs",
-    "require": "./dist/index.cjs"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./Autocomplete": {
+      "types": "./dist/Autocomplete.d.ts",
+      "import": "./dist/Autocomplete.mjs",
+      "require": "./dist/Autocomplete.js"
+    },
+    "./Checkbox": {
+      "types": "./dist/Checkbox.d.ts",
+      "import": "./dist/Checkbox.mjs",
+      "require": "./dist/Checkbox.js"
+    },
+    "./Chip": {
+      "types": "./dist/Chip.d.ts",
+      "import": "./dist/Chip.mjs",
+      "require": "./dist/Chip.js"
+    },
+    "./ColorInput": {
+      "types": "./dist/ColorInput.d.ts",
+      "import": "./dist/ColorInput.mjs",
+      "require": "./dist/ColorInput.js"
+    },
+    "./ColorPicker": {
+      "types": "./dist/ColorPicker.d.ts",
+      "import": "./dist/ColorPicker.mjs",
+      "require": "./dist/ColorPicker.js"
+    },
+    "./DateInput": {
+      "types": "./dist/DateInput.d.ts",
+      "import": "./dist/DateInput.mjs",
+      "require": "./dist/DateInput.js"
+    },
+    "./DatePickerInput": {
+      "types": "./dist/DatePickerInput.d.ts",
+      "import": "./dist/DatePickerInput.mjs",
+      "require": "./dist/DatePickerInput.js"
+    },
+    "./DateTimePicker": {
+      "types": "./dist/DateTimePicker.d.ts",
+      "import": "./dist/DateTimePicker.mjs",
+      "require": "./dist/DateTimePicker.js"
+    },
+    "./FileInput": {
+      "types": "./dist/FileInput.d.ts",
+      "import": "./dist/FileInput.mjs",
+      "require": "./dist/FileInput.js"
+    },
+    "./Input": {
+      "types": "./dist/Input.d.ts",
+      "import": "./dist/Input.mjs",
+      "require": "./dist/Input.js"
+    },
+    "./JsonInput": {
+      "types": "./dist/JsonInput.d.ts",
+      "import": "./dist/JsonInput.mjs",
+      "require": "./dist/JsonInput.js"
+    },
+    "./MonthPickerInput": {
+      "types": "./dist/MonthPickerInput.d.ts",
+      "import": "./dist/MonthPickerInput.mjs",
+      "require": "./dist/MonthPickerInput.js"
+    },
+    "./MultiSelect": {
+      "types": "./dist/MultiSelect.d.ts",
+      "import": "./dist/MultiSelect.mjs",
+      "require": "./dist/MultiSelect.js"
+    },
+    "./NativeSelect": {
+      "types": "./dist/NativeSelect.d.ts",
+      "import": "./dist/NativeSelect.mjs",
+      "require": "./dist/NativeSelect.js"
+    },
+    "./NumberInput": {
+      "types": "./dist/NumberInput.d.ts",
+      "import": "./dist/NumberInput.mjs",
+      "require": "./dist/NumberInput.js"
+    },
+    "./PasswordInput": {
+      "types": "./dist/PasswordInput.d.ts",
+      "import": "./dist/PasswordInput.mjs",
+      "require": "./dist/PasswordInput.js"
+    },
+    "./PinInput": {
+      "types": "./dist/PinInput.d.ts",
+      "import": "./dist/PinInput.mjs",
+      "require": "./dist/PinInput.js"
+    },
+    "./Radio": {
+      "types": "./dist/Radio.d.ts",
+      "import": "./dist/Radio.mjs",
+      "require": "./dist/Radio.js"
+    },
+    "./Rating": {
+      "types": "./dist/Rating.d.ts",
+      "import": "./dist/Rating.mjs",
+      "require": "./dist/Rating.js"
+    },
+    "./SegmentedControl": {
+      "types": "./dist/SegmentedControl.d.ts",
+      "import": "./dist/SegmentedControl.mjs",
+      "require": "./dist/SegmentedControl.js"
+    },
+    "./Select": {
+      "types": "./dist/Select.d.ts",
+      "import": "./dist/Select.mjs",
+      "require": "./dist/Select.js"
+    },
+    "./Slider": {
+      "types": "./dist/Slider.d.ts",
+      "import": "./dist/Slider.mjs",
+      "require": "./dist/Slider.js"
+    },
+    "./Switch": {
+      "types": "./dist/Switch.d.ts",
+      "import": "./dist/Switch.mjs",
+      "require": "./dist/Switch.js"
+    },
+    "./TagsInput": {
+      "types": "./dist/TagsInput.d.ts",
+      "import": "./dist/TagsInput.mjs",
+      "require": "./dist/TagsInput.js"
+    },
+    "./TextInput": {
+      "types": "./dist/TextInput.d.ts",
+      "import": "./dist/TextInput.mjs",
+      "require": "./dist/TextInput.js"
+    },
+    "./Textarea": {
+      "types": "./dist/Textarea.d.ts",
+      "import": "./dist/Textarea.mjs",
+      "require": "./dist/Textarea.js"
+    },
+    "./TimeInput": {
+      "types": "./dist/TimeInput.d.ts",
+      "import": "./dist/TimeInput.mjs",
+      "require": "./dist/TimeInput.js"
+    },
+    "./YearPickerInput": {
+      "types": "./dist/YearPickerInput.d.ts",
+      "import": "./dist/YearPickerInput.mjs",
+      "require": "./dist/YearPickerInput.js"
+    }
   },
-  "main": "dist/index.cjs",
-  "module": "dist/index.esm.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "microbundle --globals react/jsx-runtime=React,@mantine/core=MantineCore,@mantine/dates=MantineDates,react=React,react-dom=ReactDOM,react-hook-form=ReactHookForm",
+    "build": "rollup -c rollup.config.mjs",
     "build-storybook": "storybook build",
     "compile": "tsc --noEmit",
-    "generate-barrels": "barrelsby --delete -c .barrelsby",
     "lint": "eslint src/**/*.tsx --fix",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
@@ -44,11 +185,14 @@
     "@mantine/core": "7.0.0",
     "@mantine/dates": "7.0.0",
     "@mantine/ds": "^7.0.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
-    "barrelsby": "^2.8.1",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard-with-typescript": "^39.0.0",
@@ -58,12 +202,14 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
-    "microbundle": "^0.15.1",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "7.46.1",
+    "rollup": "^4.13.0",
+    "rollup-plugin-dts": "^6.1.0",
     "semantic-release": "^22.0.0",
+    "tslib": "^2.6.2",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
@@ -72,16 +218,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43"
-  },
-  "isLibrary": true,
-  "microbundle": {
-    "globals": {
-      "react/jsx-runtime": "React",
-      "@mantine/core": "MantineCore",
-      "@mantine/dates": "MantineDates",
-      "react": "React",
-      "react-dom": "ReactDOM",
-      "react-hook-form": "ReactHookForm"
-    }
   }
 }

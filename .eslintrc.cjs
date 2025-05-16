@@ -1,5 +1,5 @@
 module.exports = {
-  ignorePatterns: ["example", ".eslintrc.cjs"],
+  ignorePatterns: ["example", ".eslintrc.cjs", "rollup.config.mjs"],
   settings: {
     react: {
       version: "detect",
