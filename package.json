@@ -1,6 +1,6 @@
 {
   "name": "@trendcapital/react-hook-form-mantine",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "React hook form wrapper for Mantine components",
   "keywords": [
     "react-hook-form",
