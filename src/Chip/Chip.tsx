@@ -32,9 +32,9 @@ export const Chip = <T extends FieldValues>({
     <$Chip
       value={value}
       checked={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}

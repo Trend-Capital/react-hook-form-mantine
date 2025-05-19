@@ -34,9 +34,9 @@ export function TagsInput<T extends FieldValues>({
   return (
     <$TagsInput
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       error={fieldState.error?.message}
       {...field}

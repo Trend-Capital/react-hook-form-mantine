@@ -37,9 +37,9 @@ export function DatePickerInput<T extends FieldValues>({
     <$DatePickerInput
       error={fieldState.error?.message}
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}

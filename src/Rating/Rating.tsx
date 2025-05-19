@@ -33,9 +33,9 @@ export function Rating<T extends FieldValues>({
   return (
     <$Rating
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}

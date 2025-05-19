@@ -33,9 +33,9 @@ export function Slider<T extends FieldValues>({
   return (
     <$Slider
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}

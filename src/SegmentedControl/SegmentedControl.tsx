@@ -34,9 +34,9 @@ export function SegmentedControl<T extends FieldValues>({
   return (
     <$SegmentedControl
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}

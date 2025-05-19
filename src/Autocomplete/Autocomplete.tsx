@@ -35,9 +35,9 @@ export function Autocomplete<T extends FieldValues>({
     <$Autocomplete
       error={fieldState.error?.message}
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}

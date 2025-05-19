@@ -33,9 +33,9 @@ export const ChipGroup = <T extends FieldValues>({
   return (
     <$ChipGroup
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}

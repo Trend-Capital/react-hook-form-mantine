@@ -35,9 +35,9 @@ export function DateInput<T extends FieldValues>({
     <$DateInput
       error={fieldState.error?.message}
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}

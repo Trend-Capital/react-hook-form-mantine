@@ -33,9 +33,9 @@ export function ColorPicker<T extends FieldValues>({
   return (
     <$ColorPicker
       value={value}
-      onChange={(e) => {
-        fieldOnChange(e);
-        onChange?.(e);
+      onChange={(val) => {
+        fieldOnChange(val);
+        onChange?.(val);
       }}
       {...field}
       {...props}
