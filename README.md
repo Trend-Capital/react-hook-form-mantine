@@ -61,30 +61,44 @@ function MyForm() {
 
 ## Available Components
 
+- AngleSlider
 - Autocomplete
-- Checkbox & CheckboxGroup
-- Chip & ChipGroup
-- ColorInput & ColorPicker
-- DateInput, DatePickerInput, DateTimePicker & YearPickerInput
+- Checkbox
+- CheckBoxGroup
+- Chip
+- ChipGroup
+- ColorInput
+- ColorPicker
+- DateInput
+- DatePicker
+- DatePickerInput
+- DateTimePicker
 - FileInput
 - Input
 - JsonInput
+- MonthPicker
 - MonthPickerInput
 - MultiSelect
 - NativeSelect
 - NumberInput
 - PasswordInput
 - PinInput
-- Radio & RadioGroup
+- Radio
+- RadioGroup
 - Rating
 - SegmentedControl
 - Select
 - Slider
-- Switch & SwitchGroup
+- Switch
+- SwitchGroup
 - TagsInput
-- TextInput
 - Textarea
+- TextInput
+- TimeGrid
 - TimeInput
+- TimePicker
+- YearPicker
+- YearPickerInput
 
 ## Attribution
 
