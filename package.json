@@ -1,5 +1,5 @@
 {
-  "name": "@franzen-dev/react-hook-form-mantine",
+  "name": "@trendcapital/react-hook-form-mantine",
   "version": "4.0.0",
   "description": "React hook form wrapper for Mantine components",
   "keywords": [
@@ -7,58 +7,57 @@
     "form-validation",
     "mantine"
   ],
-  "homepage": "https://github.com/brycefranzen/react-hook-form-mantine",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brycefranzen/react-hook-form-mantine.git"
-  },
   "license": "MIT",
-  "author": "Bryce Franzen",
+  "author": "Trend Capital",
+  "contributors": [
+    "Bryce Franzen"
+  ],
+  "private": false,
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.mjs",
+    "clean": "rimraf dist",
+    "generate-barrels": "barrelsby --delete -c .barrelsby",
+    "build": "npm run clean && npm run generate-barrels && rollup -c rollup.config.mjs",
+    "dev": "npm run build -- --watch",
     "typecheck": "tsc --noEmit",
-    "generate-exports": "node scripts/generate-exports.mjs",
-    "lint": "eslint src/**/*.tsx --fix",
-    "prepare": "husky",
-    "prepublishOnly": "npm run generate-exports && npm run build",
-    "semantic-release": "semantic-release",
-    "prettier:check": "prettier --check .",
-    "prettier:format": "prettier --write ."
+    "lint": "eslint src/**/*.tsx",
+    "lint:fix": "npm run lint -- --fix",
+    "test:unit": "echo \"No tests specified\" && exit 0",
+    "prettier": "prettier .",
+    "prettier:check": "npm run prettier -- --check",
+    "prettier:format": "npm run prettier -- --write"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
     "@mantine/core": "^8.0.1",
     "@mantine/dates": "^8.0.1",
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
+    "barrelsby": "^2.8.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-prettier": "^5.4.0",
     "eslint-plugin-react": "^7.37.5",
-    "husky": "^9.1.7",
     "prettier": "^3.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "7.56.4",
+    "rimraf": "^6.0.1",
     "rollup": "^4.41.0",
     "rollup-plugin-dts": "^6.2.1",
-    "semantic-release": "^24.2.4",
+    "standard-version": "^9.5.0",
     "ts-node": "^10.9.2",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3"
@@ -69,182 +68,5 @@
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0",
     "react-hook-form": ">=7.43.0"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "./AngleSlider": {
-      "types": "./dist/AngleSlider.d.ts",
-      "import": "./dist/AngleSlider.mjs",
-      "require": "./dist/AngleSlider.js"
-    },
-    "./Autocomplete": {
-      "types": "./dist/Autocomplete.d.ts",
-      "import": "./dist/Autocomplete.mjs",
-      "require": "./dist/Autocomplete.js"
-    },
-    "./Checkbox": {
-      "types": "./dist/Checkbox.d.ts",
-      "import": "./dist/Checkbox.mjs",
-      "require": "./dist/Checkbox.js"
-    },
-    "./Chip": {
-      "types": "./dist/Chip.d.ts",
-      "import": "./dist/Chip.mjs",
-      "require": "./dist/Chip.js"
-    },
-    "./ColorInput": {
-      "types": "./dist/ColorInput.d.ts",
-      "import": "./dist/ColorInput.mjs",
-      "require": "./dist/ColorInput.js"
-    },
-    "./ColorPicker": {
-      "types": "./dist/ColorPicker.d.ts",
-      "import": "./dist/ColorPicker.mjs",
-      "require": "./dist/ColorPicker.js"
-    },
-    "./DateInput": {
-      "types": "./dist/DateInput.d.ts",
-      "import": "./dist/DateInput.mjs",
-      "require": "./dist/DateInput.js"
-    },
-    "./DatePicker": {
-      "types": "./dist/DatePicker.d.ts",
-      "import": "./dist/DatePicker.mjs",
-      "require": "./dist/DatePicker.js"
-    },
-    "./DatePickerInput": {
-      "types": "./dist/DatePickerInput.d.ts",
-      "import": "./dist/DatePickerInput.mjs",
-      "require": "./dist/DatePickerInput.js"
-    },
-    "./DateTimePicker": {
-      "types": "./dist/DateTimePicker.d.ts",
-      "import": "./dist/DateTimePicker.mjs",
-      "require": "./dist/DateTimePicker.js"
-    },
-    "./FileInput": {
-      "types": "./dist/FileInput.d.ts",
-      "import": "./dist/FileInput.mjs",
-      "require": "./dist/FileInput.js"
-    },
-    "./Input": {
-      "types": "./dist/Input.d.ts",
-      "import": "./dist/Input.mjs",
-      "require": "./dist/Input.js"
-    },
-    "./JsonInput": {
-      "types": "./dist/JsonInput.d.ts",
-      "import": "./dist/JsonInput.mjs",
-      "require": "./dist/JsonInput.js"
-    },
-    "./MonthPicker": {
-      "types": "./dist/MonthPicker.d.ts",
-      "import": "./dist/MonthPicker.mjs",
-      "require": "./dist/MonthPicker.js"
-    },
-    "./MonthPickerInput": {
-      "types": "./dist/MonthPickerInput.d.ts",
-      "import": "./dist/MonthPickerInput.mjs",
-      "require": "./dist/MonthPickerInput.js"
-    },
-    "./MultiSelect": {
-      "types": "./dist/MultiSelect.d.ts",
-      "import": "./dist/MultiSelect.mjs",
-      "require": "./dist/MultiSelect.js"
-    },
-    "./NativeSelect": {
-      "types": "./dist/NativeSelect.d.ts",
-      "import": "./dist/NativeSelect.mjs",
-      "require": "./dist/NativeSelect.js"
-    },
-    "./NumberInput": {
-      "types": "./dist/NumberInput.d.ts",
-      "import": "./dist/NumberInput.mjs",
-      "require": "./dist/NumberInput.js"
-    },
-    "./PasswordInput": {
-      "types": "./dist/PasswordInput.d.ts",
-      "import": "./dist/PasswordInput.mjs",
-      "require": "./dist/PasswordInput.js"
-    },
-    "./PinInput": {
-      "types": "./dist/PinInput.d.ts",
-      "import": "./dist/PinInput.mjs",
-      "require": "./dist/PinInput.js"
-    },
-    "./Radio": {
-      "types": "./dist/Radio.d.ts",
-      "import": "./dist/Radio.mjs",
-      "require": "./dist/Radio.js"
-    },
-    "./Rating": {
-      "types": "./dist/Rating.d.ts",
-      "import": "./dist/Rating.mjs",
-      "require": "./dist/Rating.js"
-    },
-    "./SegmentedControl": {
-      "types": "./dist/SegmentedControl.d.ts",
-      "import": "./dist/SegmentedControl.mjs",
-      "require": "./dist/SegmentedControl.js"
-    },
-    "./Select": {
-      "types": "./dist/Select.d.ts",
-      "import": "./dist/Select.mjs",
-      "require": "./dist/Select.js"
-    },
-    "./Slider": {
-      "types": "./dist/Slider.d.ts",
-      "import": "./dist/Slider.mjs",
-      "require": "./dist/Slider.js"
-    },
-    "./Switch": {
-      "types": "./dist/Switch.d.ts",
-      "import": "./dist/Switch.mjs",
-      "require": "./dist/Switch.js"
-    },
-    "./TagsInput": {
-      "types": "./dist/TagsInput.d.ts",
-      "import": "./dist/TagsInput.mjs",
-      "require": "./dist/TagsInput.js"
-    },
-    "./TextInput": {
-      "types": "./dist/TextInput.d.ts",
-      "import": "./dist/TextInput.mjs",
-      "require": "./dist/TextInput.js"
-    },
-    "./Textarea": {
-      "types": "./dist/Textarea.d.ts",
-      "import": "./dist/Textarea.mjs",
-      "require": "./dist/Textarea.js"
-    },
-    "./TimeGrid": {
-      "types": "./dist/TimeGrid.d.ts",
-      "import": "./dist/TimeGrid.mjs",
-      "require": "./dist/TimeGrid.js"
-    },
-    "./TimeInput": {
-      "types": "./dist/TimeInput.d.ts",
-      "import": "./dist/TimeInput.mjs",
-      "require": "./dist/TimeInput.js"
-    },
-    "./TimePicker": {
-      "types": "./dist/TimePicker.d.ts",
-      "import": "./dist/TimePicker.mjs",
-      "require": "./dist/TimePicker.js"
-    },
-    "./YearPicker": {
-      "types": "./dist/YearPicker.d.ts",
-      "import": "./dist/YearPicker.mjs",
-      "require": "./dist/YearPicker.js"
-    },
-    "./YearPickerInput": {
-      "types": "./dist/YearPickerInput.d.ts",
-      "import": "./dist/YearPickerInput.mjs",
-      "require": "./dist/YearPickerInput.js"
-    }
   }
 }
