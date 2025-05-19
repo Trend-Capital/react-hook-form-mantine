@@ -5,7 +5,7 @@ React-Hook-Form-Mantine is a library that simplifies the integration of Mantine 
 ## Getting Started
 
 ```bash
-npm install @franzen-dev/react-hook-form-mantine
+npm install @trendcapital/react-hook-form-mantine
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ npm install @franzen-dev/react-hook-form-mantine
 
 ```jsx
 import { useForm } from "react-hook-form";
-import { TextInput, NumberInput } from "@franzen-dev/react-hook-form-mantine";
+import { TextInput, NumberInput } from "@trendcapital/react-hook-form-mantine";
 
 function MyForm() {
   const { control, handleSubmit } = useForm();
@@ -39,8 +39,8 @@ For better tree-shaking and optimized bundle size, you can import components dir
 
 ```jsx
 import { useForm } from "react-hook-form";
-import { TextInput } from "@franzen-dev/react-hook-form-mantine/TextInput";
-import { NumberInput } from "@franzen-dev/react-hook-form-mantine/NumberInput";
+import { TextInput } from "@trendcapital/react-hook-form-mantine/TextInput";
+import { NumberInput } from "@trendcapital/react-hook-form-mantine/NumberInput";
 
 function MyForm() {
   const { control, handleSubmit } = useForm();
