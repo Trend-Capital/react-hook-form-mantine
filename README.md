@@ -13,8 +13,8 @@ npm install @franzen-dev/react-hook-form-mantine
 ### Import the entire library (legacy method)
 
 ```jsx
-import { useForm } from 'react-hook-form';
-import { TextInput, NumberInput } from '@franzen-dev/react-hook-form-mantine';
+import { useForm } from "react-hook-form";
+import { TextInput, NumberInput } from "@franzen-dev/react-hook-form-mantine";
 
 function MyForm() {
   const { control, handleSubmit } = useForm();
@@ -38,9 +38,9 @@ function MyForm() {
 For better tree-shaking and optimized bundle size, you can import components directly:
 
 ```jsx
-import { useForm } from 'react-hook-form';
-import { TextInput } from '@franzen-dev/react-hook-form-mantine/TextInput';
-import { NumberInput } from '@franzen-dev/react-hook-form-mantine/NumberInput';
+import { useForm } from "react-hook-form";
+import { TextInput } from "@franzen-dev/react-hook-form-mantine/TextInput";
+import { NumberInput } from "@franzen-dev/react-hook-form-mantine/NumberInput";
 
 function MyForm() {
   const { control, handleSubmit } = useForm();

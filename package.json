@@ -24,18 +24,18 @@
   ],
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
-    "build-storybook": "storybook build",
-    "compile": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "generate-exports": "node scripts/generate-exports.mjs",
     "lint": "eslint src/**/*.tsx --fix",
     "prepare": "husky install",
     "prepublishOnly": "npm run generate-exports && npm run build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prettier:check": "prettier --check .",
+    "prettier:format": "prettier --write ."
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@hookform/resolvers": "^3.3.1",
     "@mantine/core": "^8.0.1",
     "@mantine/dates": "^8.0.1",
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -49,29 +49,26 @@
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard-with-typescript": "^39.0.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^16.1.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react": "^7.37.5",
     "husky": "^8.0.3",
-    "prettier": "^3.0.3",
+    "prettier": "^3.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "7.46.1",
-    "rollup": "^4.13.0",
-    "rollup-plugin-dts": "^6.1.0",
+    "react-hook-form": "7.56.4",
+    "rollup": "^4.41.0",
+    "rollup-plugin-dts": "^6.2.1",
     "semantic-release": "^22.0.0",
     "ts-node": "^10.9.2",
-    "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
-    "@mantine/core": "^8.0.1",
-    "@mantine/dates": "^8.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.43"
+    "@mantine/core": ">=8.0.1",
+    "@mantine/dates": ">=8.0.1",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    "react-hook-form": ">=7.43.0"
   },
   "exports": {
     ".": {

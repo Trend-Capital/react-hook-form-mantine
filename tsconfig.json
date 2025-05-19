@@ -4,11 +4,7 @@
     "declarationDir": "dist",
     "outDir": "dist",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -23,13 +19,6 @@
     "jsxFactory": "",
     "jsxFragmentFactory": ""
   },
-  "include": [
-    "src",
-    "scripts"
-  ],
-  "exclude": [
-    "src/**/*.spec.tsx",
-    "dist",
-    "rollup.config.mjs"
-  ]
+  "include": ["src", "scripts"],
+  "exclude": ["src/**/*.spec.tsx", "dist", "rollup.config.mjs"]
 }
