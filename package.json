@@ -76,6 +76,11 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
+    "./AngleSlider": {
+      "types": "./dist/AngleSlider.d.ts",
+      "import": "./dist/AngleSlider.mjs",
+      "require": "./dist/AngleSlider.js"
+    },
     "./Autocomplete": {
       "types": "./dist/Autocomplete.d.ts",
       "import": "./dist/Autocomplete.mjs",
@@ -106,6 +111,11 @@
       "import": "./dist/DateInput.mjs",
       "require": "./dist/DateInput.js"
     },
+    "./DatePicker": {
+      "types": "./dist/DatePicker.d.ts",
+      "import": "./dist/DatePicker.mjs",
+      "require": "./dist/DatePicker.js"
+    },
     "./DatePickerInput": {
       "types": "./dist/DatePickerInput.d.ts",
       "import": "./dist/DatePickerInput.mjs",
@@ -130,6 +140,11 @@
       "types": "./dist/JsonInput.d.ts",
       "import": "./dist/JsonInput.mjs",
       "require": "./dist/JsonInput.js"
+    },
+    "./MonthPicker": {
+      "types": "./dist/MonthPicker.d.ts",
+      "import": "./dist/MonthPicker.mjs",
+      "require": "./dist/MonthPicker.js"
     },
     "./MonthPickerInput": {
       "types": "./dist/MonthPickerInput.d.ts",
@@ -206,10 +221,25 @@
       "import": "./dist/Textarea.mjs",
       "require": "./dist/Textarea.js"
     },
+    "./TimeGrid": {
+      "types": "./dist/TimeGrid.d.ts",
+      "import": "./dist/TimeGrid.mjs",
+      "require": "./dist/TimeGrid.js"
+    },
     "./TimeInput": {
       "types": "./dist/TimeInput.d.ts",
       "import": "./dist/TimeInput.mjs",
       "require": "./dist/TimeInput.js"
+    },
+    "./TimePicker": {
+      "types": "./dist/TimePicker.d.ts",
+      "import": "./dist/TimePicker.mjs",
+      "require": "./dist/TimePicker.js"
+    },
+    "./YearPicker": {
+      "types": "./dist/YearPicker.d.ts",
+      "import": "./dist/YearPicker.mjs",
+      "require": "./dist/YearPicker.js"
     },
     "./YearPickerInput": {
       "types": "./dist/YearPickerInput.d.ts",
