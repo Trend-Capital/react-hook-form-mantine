@@ -63,8 +63,8 @@
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
-    "@mantine/core": ">=8.0.1",
-    "@mantine/dates": ">=8.0.1",
+    "@mantine/core": ">=8.0.0",
+    "@mantine/dates": ">=8.0.0",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0",
     "react-hook-form": ">=7.43.0"

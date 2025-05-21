@@ -10,37 +10,9 @@ npm install @trendcapital/react-hook-form-mantine
 
 ## Usage
 
-### Import the entire library (legacy method)
-
 ```jsx
 import { useForm } from "react-hook-form";
 import { TextInput, NumberInput } from "@trendcapital/react-hook-form-mantine";
-
-function MyForm() {
-  const { control, handleSubmit } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <TextInput name="username" control={control} label="Username" />
-      <NumberInput name="age" control={control} label="Age" />
-      <button type="submit">Submit</button>
-    </form>
-  );
-}
-```
-
-### Import individual components (recommended)
-
-For better tree-shaking and optimized bundle size, you can import components directly:
-
-```jsx
-import { useForm } from "react-hook-form";
-import { TextInput } from "@trendcapital/react-hook-form-mantine/TextInput";
-import { NumberInput } from "@trendcapital/react-hook-form-mantine/NumberInput";
 
 function MyForm() {
   const { control, handleSubmit } = useForm();
