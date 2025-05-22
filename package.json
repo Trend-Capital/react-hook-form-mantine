@@ -7,6 +7,10 @@
     "form-validation",
     "mantine"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Trend-Capital/react-hook-form-mantine.git"
+  },
   "license": "MIT",
   "author": "Trend Capital",
   "contributors": [

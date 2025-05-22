@@ -1,7 +1,0 @@
-include:
-  - project: ci-configs/sdk
-    ref: master
-    file: base.yml
-
-variables:
-  IMAGE: node:22.15.1
