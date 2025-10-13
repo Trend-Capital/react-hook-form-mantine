@@ -10,6 +10,8 @@ npm install @trendcapital/react-hook-form-mantine
 
 ## Usage
 
+NOTE: `control` prop is optional if the input is used within `<FormProvider />`
+
 ```jsx
 import { useForm } from "react-hook-form";
 import { TextInput, NumberInput } from "@trendcapital/react-hook-form-mantine";
@@ -48,6 +50,7 @@ function MyForm() {
 - FileInput
 - Input
 - JsonInput
+- MiniCalendar
 - MonthPicker
 - MonthPickerInput
 - MultiSelect
