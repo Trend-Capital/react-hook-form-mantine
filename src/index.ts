@@ -17,6 +17,7 @@ export * from "./DateTimePicker/DateTimePicker";
 export * from "./FileInput/FileInput";
 export * from "./Input/Input";
 export * from "./JsonInput/JsonInput";
+export * from "./MiniCalendar/MiniCalendar";
 export * from "./MonthPicker/MonthPicker";
 export * from "./MonthPickerInput/MonthPickerInput";
 export * from "./MultiSelect/MultiSelect";
