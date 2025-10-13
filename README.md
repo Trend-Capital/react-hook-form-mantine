@@ -49,6 +49,7 @@ function MyForm() {
 - DateTimePicker
 - FileInput
 - Input
+- InputBase
 - JsonInput
 - MiniCalendar
 - MonthPicker
