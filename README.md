@@ -8,9 +8,32 @@ React-Hook-Form-Mantine is a library that simplifies the integration of Mantine 
 npm install @trendcapital/react-hook-form-mantine
 ```
 
-## Usage
+## Basic Usage
 
-NOTE: `control` prop is optional if the input is used within `<FormProvider />`
+```jsx
+import { useForm } from "react-hook-form";
+import { TextInput, NumberInput } from "@trendcapital/react-hook-form-mantine";
+
+function MyForm() {
+  const { control, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  return (
+    <FormProvider {...form}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <TextInput name="username" label="Username" />
+        <NumberInput name="age" label="Age" />
+        <button type="submit">Submit</button>
+      </form>
+    </FormProvider>
+  );
+}
+```
+
+Optionally, without a `FormProvider`, you may pass the `control` prop:
 
 ```jsx
 import { useForm } from "react-hook-form";
@@ -33,6 +56,82 @@ function MyForm() {
 }
 ```
 
+## Input Name Assertion
+
+```jsx
+import { useForm } from "react-hook-form";
+import { TextInput, NumberInput } from "@trendcapital/react-hook-form-mantine";
+
+const schema = z.object({
+  username: z.string().min(2).max(100),
+  age: z.number().min(0).max(120),
+});
+
+type TFormInputs = z.infer<typeof schema>;
+
+function MyForm() {
+  const { control, handleSubmit } = useForm<TFormInputs>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit: SubmitHandler<TFormInputs> = (data) => {
+    console.log(data);
+  };
+
+  return (
+    <FormProvider {...form}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <TextInput<TFormInputs> name="username" label="Username" />
+        <NumberInput<TFormInputs> name="age" label="Age" />
+
+        {/* This one will show an error on the name prop */}
+        <TextInput<TFormInputs> name="email" label="Email" />
+
+        <button type="submit">Submit</button>
+      </form>
+    </FormProvider>
+  );
+}
+```
+
+## InputBase Component Polymorphism
+
+```jsx
+import { useForm } from "react-hook-form";
+import { TextInput, NumberInput } from "@trendcapital/react-hook-form-mantine";
+
+const schema = z.object({
+  agree: z.boolean(),
+  age: z.number().min(0).max(120),
+});
+
+type TFormInputs = z.infer<typeof schema>;
+
+function MyForm() {
+  const { control, handleSubmit } = useForm<TFormInputs>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit: SubmitHandler<TFormInputs> = (data) => {
+    console.log(data);
+  };
+
+  return (
+    <FormProvider {...form}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {/* Defaults to "input" component type */}
+        <InputBase<TFormInputs> name="age" label="Age" placeholder="Enter your age" type="number" />
+
+        <InputBase<TFormInputs, 'button'> name="agree" onClick={() => {
+          console.log('All button props are allowed on this component')
+        }} />
+
+        <button type="submit">Submit</button>
+      </form>
+    </FormProvider>
+  );
+```
+
 ## Available Components
 
 - AngleSlider
@@ -49,7 +148,7 @@ function MyForm() {
 - DateTimePicker
 - FileInput
 - Input
-- InputBase
+- InputBase (polymorphic component)
 - JsonInput
 - MiniCalendar
 - MonthPicker
