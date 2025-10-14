@@ -23,10 +23,11 @@ export function InputBase<
   defaultValue,
   rules,
   shouldUnregister,
+  onChange,
   ...props
 }: InputBaseProps<T, C>) {
   const {
-    field: { value, ...field },
+    field: { value, onChange: fieldOnChange, ...field },
     fieldState,
   } = useController<T>({
     name,
@@ -39,6 +40,10 @@ export function InputBase<
   return (
     <$InputBase<any>
       value={value}
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+        fieldOnChange(e);
+        onChange?.(e);
+      }}
       error={fieldState.error?.message}
       {...field}
       {...props}
