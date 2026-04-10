@@ -5,13 +5,16 @@ import {
 } from "react-hook-form";
 import {
   Select as $Select,
+  type Primitive,
   type SelectProps as $SelectProps,
 } from "@mantine/core";
 
-export type SelectProps<T extends FieldValues> = UseControllerProps<T> &
-  Omit<$SelectProps, "value" | "defaultValue">;
+export type SelectProps<
+  T extends FieldValues,
+  V extends Primitive = string,
+> = UseControllerProps<T> & Omit<$SelectProps<V>, "value" | "defaultValue">;
 
-export function Select<T extends FieldValues>({
+export function Select<T extends FieldValues, V extends Primitive = string>({
   name,
   control,
   defaultValue,
@@ -19,7 +22,7 @@ export function Select<T extends FieldValues>({
   shouldUnregister,
   onChange,
   ...props
-}: SelectProps<T>) {
+}: SelectProps<T, V>) {
   const {
     field: { value, onChange: fieldOnChange, ...field },
     fieldState,
@@ -32,7 +35,7 @@ export function Select<T extends FieldValues>({
   });
 
   return (
-    <$Select
+    <$Select<V>
       value={value}
       onChange={(val, option) => {
         fieldOnChange(val);

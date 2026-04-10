@@ -6,12 +6,16 @@ import {
 import {
   type ChipGroupProps as $ChipGroupProps,
   ChipGroup as $ChipGroup,
+  type Primitive,
 } from "@mantine/core";
 
-export type ChipGroupProps<T extends FieldValues> = UseControllerProps<T> &
-  Omit<$ChipGroupProps<boolean>, "value" | "defaultValue">;
+export type ChipGroupProps<
+  T extends FieldValues,
+  V extends Primitive = string,
+> = UseControllerProps<T> &
+  Omit<$ChipGroupProps<boolean, V>, "value" | "defaultValue">;
 
-export const ChipGroup = <T extends FieldValues>({
+export const ChipGroup = <T extends FieldValues, V extends Primitive = string>({
   name,
   control,
   defaultValue,
@@ -19,7 +23,7 @@ export const ChipGroup = <T extends FieldValues>({
   shouldUnregister,
   onChange,
   ...props
-}: ChipGroupProps<T>) => {
+}: ChipGroupProps<T, V>) => {
   const {
     field: { value, onChange: fieldOnChange, ref, ...field },
   } = useController<T>({
@@ -31,7 +35,7 @@ export const ChipGroup = <T extends FieldValues>({
   });
 
   return (
-    <$ChipGroup
+    <$ChipGroup<boolean, V>
       value={value}
       onChange={(val) => {
         fieldOnChange(val);

@@ -5,13 +5,20 @@ import {
 } from "react-hook-form";
 import {
   MultiSelect as $MultiSelect,
+  type Primitive,
   type MultiSelectProps as $MultiSelectProps,
 } from "@mantine/core";
 
-export type MultiSelectProps<T extends FieldValues> = UseControllerProps<T> &
-  Omit<$MultiSelectProps, "value" | "defaultValue">;
+export type MultiSelectProps<
+  T extends FieldValues,
+  V extends Primitive = string,
+> = UseControllerProps<T> &
+  Omit<$MultiSelectProps<V>, "value" | "defaultValue">;
 
-export function MultiSelect<T extends FieldValues>({
+export function MultiSelect<
+  T extends FieldValues,
+  V extends Primitive = string,
+>({
   name,
   control,
   defaultValue,
@@ -19,7 +26,7 @@ export function MultiSelect<T extends FieldValues>({
   shouldUnregister,
   onChange,
   ...props
-}: MultiSelectProps<T>) {
+}: MultiSelectProps<T, V>) {
   const {
     field: { value, onChange: fieldOnChange, ...field },
     fieldState,
@@ -32,7 +39,7 @@ export function MultiSelect<T extends FieldValues>({
   });
 
   return (
-    <$MultiSelect
+    <$MultiSelect<V>
       value={value}
       onChange={(val) => {
         fieldOnChange(val);

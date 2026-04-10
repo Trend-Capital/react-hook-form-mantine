@@ -5,13 +5,20 @@ import {
 } from "react-hook-form";
 import {
   SwitchGroup as $SwitchGroup,
+  type Primitive,
   type SwitchGroupProps as $SwitchGroupProps,
 } from "@mantine/core";
 
-export type SwitchGroupProps<T extends FieldValues> = UseControllerProps<T> &
-  Omit<$SwitchGroupProps, "value" | "checked" | "defaultValue">;
+export type SwitchGroupProps<
+  T extends FieldValues,
+  V extends Primitive = string,
+> = UseControllerProps<T> &
+  Omit<$SwitchGroupProps<V>, "value" | "checked" | "defaultValue">;
 
-export function SwitchGroup<T extends FieldValues>({
+export function SwitchGroup<
+  T extends FieldValues,
+  V extends Primitive = string,
+>({
   name,
   control,
   defaultValue,
@@ -19,7 +26,7 @@ export function SwitchGroup<T extends FieldValues>({
   shouldUnregister,
   onChange,
   ...props
-}: SwitchGroupProps<T>) {
+}: SwitchGroupProps<T, V>) {
   const {
     field: { value, onChange: fieldOnChange, ...field },
     fieldState,
@@ -32,7 +39,7 @@ export function SwitchGroup<T extends FieldValues>({
   });
 
   return (
-    <$SwitchGroup
+    <$SwitchGroup<V>
       value={value}
       onChange={(val) => {
         fieldOnChange(val);
