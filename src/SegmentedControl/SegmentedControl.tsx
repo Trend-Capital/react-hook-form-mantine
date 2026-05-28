@@ -13,7 +13,7 @@ export type SegmentedControlProps<
   T extends FieldValues,
   V extends Primitive = string,
 > = UseControllerProps<T> &
-  Omit<$SegmentedControlProps<V>, "values" | "defaultValues">;
+  Omit<$SegmentedControlProps<V>, "value" | "defaultValue">;
 
 export function SegmentedControl<
   T extends FieldValues,
